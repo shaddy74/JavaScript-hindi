@@ -36,3 +36,28 @@ const myFunction = function(){
 }
 
 console.log(typeof anotherId);
+
+
+//  ****************** Memories In JS ***************************
+
+// Stack (primitive), Heap (Non-primitive)
+
+let myYoutubename = "motivational speaker"
+
+let anotherName = myYoutubename
+anotherName = "shaddy developer"
+
+console.log(anotherName);
+console.log(myYoutubename)
+
+
+let userOne = {
+    email : "user@google.com",
+    upi: "use@ybl",
+}
+
+let userTwo = userOne
+
+userTwo.email = "sadab@google.com"
+console.log(userTwo.email)
+console.log(userOne.email)
