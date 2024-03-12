@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Shaddy Web Developer </h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHindi = function(){
+        console.log("sayHindi");
+    }
+    const changeText = function (){
+        document.querySelector('h1').
+        innerHTML = "Best Web Dev"
+    }
+
+    const changeMe = setTimeout(changeText,
+    500)
+
+    document.querySelector('#stop').
+    addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log(STOPPED)
+    })
+</script>
+</html>
