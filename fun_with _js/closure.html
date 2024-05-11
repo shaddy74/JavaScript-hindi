@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <title>Closure</title>
+</head>
+
+<body style="background-color: #313131;">
+<button id="orange" style="background-color: orange;">Orange</button>
+<button id="green" style="background-color: green;">Green</button>
+<button id="white" style="background-color: white;">White</button>
+<button id="red" style="background-color: red;">Red</button>
+<button id="yellow" style="background-color: yellow;">Yellow</button>
+<button id="pink" style="background-color: pink;">Pink</button>
+</body>
+<script>
+    // Lexical Scoping 
+    function outer(){
+        let username = "shadab"
+        function inner(){
+            let secret = "sadab123"
+            console.log("INNER", username);
+        }
+        function innerTwo(){
+            console.log("INNER TWO", username);
+            console.log(secret);  
+        }
+        inner();
+        innerTwo();
+    }
+    outer()
+    console.log("TOO OUTER", username);
+</script>
+<script>
+    // Closure Scoping
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor ="orange"
+    // }
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor ="green"
+    // }
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
+    document.getElementById('white').onclick = clickHandler("white")
+    document.getElementById('red').onclick = clickHandler("red")
+    document.getElementById('yellow').onclick = clickHandler("yellow")
+    document.getElementById('pink').onclick = clickHandler("pink")
+</script>
+</html>
